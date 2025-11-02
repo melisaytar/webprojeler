@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Sadece temel görünüm için CSS */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 50%; /* Tablonun genişliği */
+            margin: 20px auto; /* Ortalamak için */
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            width: 30%; /* Etiket sütunu genişliği */
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="file"] {
+            padding: 5px 0;
+        }
+        .submit-cell {
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+<body>
+        <h2>Üye Kayıt Formu</h2>
+
+    <form action="/kayit-islemi" method="POST" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th><label for="ad">Adınız</label></th>
+                <td><input type="text" id="ad" name="ad" required></td>
+            </tr>
+            <tr>
+                <th><label for="soyad">Soyadınız</label></th>
+                <td><input type="text" id="soyad" name="soyad" required></td>
+            </tr>
+
+            <tr>
+                <th><label for="email">E-posta</label></th>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <th><label for="telefon">Telefon No</label></th>
+                <td><input type="tel" id="telefon" name="telefon" pattern="[0-9]{10}" placeholder="Örn: 5xx1234567"></td>
+            </tr>
+
+            <tr>
+                <th><label for="sifre">Şifre Oluşturun</label></th>
+                <td><input type="password" id="sifre" name="sifre" required minlength="6"></td>
+            </tr>
+            <tr>
+                <th><label for="sifre_tekrar">Şifre Tekrar</label></th>
+                <td><input type="password" id="sifre_tekrar" name="sifre_tekrar" required minlength="6"></td>
+            </tr>
+
+            <tr>
+                <th><label for="fotograf">Fotoğraf Yükle</label></th>
+                <td><input type="file" id="fotograf" name="fotograf" accept="image/*"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="submit-cell">
+                    <input type="submit" value="Kayıt Ol">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
